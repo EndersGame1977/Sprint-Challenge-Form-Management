@@ -36,17 +36,17 @@ const FormikRegistrationForm = withFormik({
       .required("Password is required")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, props }) {
     if (values.username === "alreadytaken") {
       setErrors({ username: "That username is already taken" });
     } else {
       axios
         .post("http://localhost:5000/api/register", values)
         .then(res => {
-          console.log(res); // Data was created successfully and logs to console
+          console.log(res.data); // Data was created successfully and logs to console
           resetForm();
           setSubmitting(false);
-          window.alert("Form submitted " + res.data.message);
+          props.setToken(res.data.token);
         })
         .catch(err => {
           console.log(err); // There was an error creating the data and logs to console
