@@ -80,7 +80,7 @@ and the response object will look like this:
 }
 ```
 
-- [ ] Write a custom hook that can set and retrieve this token to and from local storage
+- [x] Write a custom hook that can set and retrieve this token to and from local storage
 
 - [ ] A GET request made with the token to `http://localhost:6000/api/restricted/data` to retrieve protected data
 
