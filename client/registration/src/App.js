@@ -7,7 +7,7 @@ import ProtectedData from "./components/ProtectedData";
 function App() {
   const [token, setToken] = UseLocalStorage("token");
   return (
-    <div className="App">
+    <div className="container">
       <RegistrationForm setToken={setToken} />
       <ProtectedData token={token} />
     </div>

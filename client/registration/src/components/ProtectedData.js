@@ -27,10 +27,38 @@ const ProtectedData = props => {
 
   return (
     <div>
-      {recipes.map(recipe => {
-        return <div>{recipe.name}</div>;
+      {recipes.map((recipe, index) => {
+        return (
+          <div className="row">
+            <div className="col s12 m6">
+              <div className="card blue-grey darken-1 ">
+                <div className="card-content white-text">
+                  <span className="card-title">{recipe.name}</span>
+                  <p>Course: {recipe.course}</p>
+                  <p>Technique: {recipe.technique}</p>
+                  <p>Ingredients: {recipe.ingredients}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       })}
     </div>
   );
 };
 export default ProtectedData;
+
+// {recipes.map((recipe, index) => {
+//     return (
+//       <div className="row" key={index}>
+//         <div className="col s12 m6">
+//           <div className="card-content white-text">
+//             <span className="card-title">{recipe.name}</span>
+//             <p>{recipe.course}</p>
+//             <p>{recipe.technique}</p>
+//             <p>{recipe.ingredients}</p>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   })}

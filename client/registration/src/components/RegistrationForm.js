@@ -5,17 +5,19 @@ import axios from "axios";
 
 function RegistrationForm() {
   return (
-    <div>
-      <Form>
-        <div>
-          <ErrorMessage name="username" />
-          <Field type="text" name="username" placeholder="Username" />
+    <div className="row">
+      <Form className="col s12">
+        <div className="row">
+          <div className="input-field col s6">
+            <ErrorMessage name="username" />
+            <Field type="text" name="username" placeholder="Username" />
+          </div>
+          <div className="input-field col s6">
+            <ErrorMessage name="password" />
+            <Field type="password" name="password" placeholder="Password" />
+          </div>
+          <button className="waves-effect waves-light btn">Submit</button>
         </div>
-        <div>
-          <ErrorMessage name="password" />
-          <Field type="password" name="password" placeholder="Password" />
-        </div>
-        <button>Submit</button>
       </Form>
     </div>
   );
